@@ -5,7 +5,13 @@ class Subtitle
   end
 
   def is_readable?
-    (IO.read(@file)).length > 0
+    begin
+      if file = IO.read(@file)
+        return file.length > 0
+      end
+    rescue
+      false
+    end
   end
 
   def modulate
