@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in subtitle_processor.gemspec
-gemspec
+group :development do
+  gem "bundler"
+  gem "rspec", "~> 3.1"
+  gem "pry"
+end
