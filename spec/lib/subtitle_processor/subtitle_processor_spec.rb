@@ -18,8 +18,17 @@ module SubtitleProcessor
         expect(Subtitle.new('subst.srt').is_readable?).to eq(false)
       end
     end
-  end
 
+    describe "a file of dialogs as array" do
+      let(:dialog) do
+        file.modulate
+      end
+      it "a file of dialogs as array" do
+        expect(dialog.display_dialog(0)).to eq(["1", "00:00:00,237", "00:00:03,430", "Previously on AMC's The Walking Dead..."])
+      end
+    end
+
+  end
 end
 #describe Subtitle do
 #
